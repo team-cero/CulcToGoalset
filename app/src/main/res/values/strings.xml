@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">CulcToGoalset</string>
+    <string-array name="array1">
+        <item>Alfa Romeo</item>
+        <item>BMW</item>
+        <item>TOYOTA</item>
+    </string-array>
+    <string-array name="AlfaRomeo_array">
+        <item>147 1.9</item>
+        <item>Brera 2.2</item>
+        <item>GT 2.0</item>
+    </string-array>
+    <string-array name="BMW_array">
+        <item>Z4</item>
+        <item>X2</item>
+        <item>X3</item>
+    </string-array>
+    <string-array name="TOYOTA_array">
+        <item>86</item>
+        <item>Carolla</item>
+        <item>C-HR</item>
+    </string-array>
 </resources>
