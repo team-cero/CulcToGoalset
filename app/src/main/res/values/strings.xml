@@ -1,5 +1,9 @@
 <resources>
+
     <string name="app_name">CulcToGoalset</string>
+    <string name="co2_consumption">CO2 Consumption</string>
+    <string name="goal_setting">Goal Setting</string>
+    <string name="back">Back</string>
     <string-array name="array1">
         <item>Alfa Romeo</item>
         <item>BMW</item>
@@ -20,4 +24,8 @@
         <item>Carolla</item>
         <item>C-HR</item>
     </string-array>
+
+    <string name="sub">Sub Activity</string>
+    <string name="os_name">OS name"</string>
+    <string name="from_main">"Nickname"</string>
 </resources>

@@ -27,13 +27,14 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     // initializations
     //spinners
     var spinner1: Spinner? = null
+    var selectedBrand: String = "Alfa Romeo"
     var spinner2: Spinner? = null
-
+    var selectedModel: String = "147 1."
     private val fuelItems = arrayOf("Biodiesel", "Diesel", "Petrol")
     var selectedFuel: String = "Biodiesel"
 
     //form
-    private val DISTANCE = 1000
+    private val RESULT_SUBACTIVITY = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +83,25 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             //if the item was not selected
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 //
+            }
+        }
+
+        //move to the sub page once the culc button was tapped
+        button.setOnClickListener{
+            if (distance.text != null){
+                val intent = Intent(applicationContext, SubActivity::class.java)
+                val str = distance.text.toString()
+                val brand_result = selectedBrand
+                val model_result = selectedModel
+                val fuel_result = selectedFuel
+                Log.d("debug", str)
+
+                intent.putExtra(EXTRA_BRAND, brand_result)
+                intent.putExtra(EXTRA_MODEL,model_result)
+                intent.putExtra(EXTRA_FUEL, fuel_result)
+                intent.putExtra(EXTRA_DISTANCE, str)
+                startActivityForResult(intent, RESULT_SUBACTIVITY)
+                distance.setText("")
             }
         }
     }
@@ -138,27 +158,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     }
 
-        /*
-        //move to the sub page once the culc button was tapped
-        button.setOnClickListener{
-            if (distance.text != null){
-            val intent = Intent(applicationContext, SubActivity::class.java)
-            val str = distance.text.toString()
-            val brand_result = selectedBrand
-            val model_result = selectedModel
-            val fuel_result = selectedFuel
-            Log.d("debug", str)
-
-            intent.putExtra(EXTRA_BRAND, brand_result)
-            intent.putExtra(EXTRA_MODEL,model_result)
-            intent.putExtra(EXTRA_FUEL, fuel_result)
-            intent.putExtra(EXTRA_DISTANCE, str)
-            startActivityForResult(intent, DISTANCE)
-                distance.setText("")
-            }
-        }
-
-         */
 
     }
+
 
