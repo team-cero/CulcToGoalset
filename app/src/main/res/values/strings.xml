@@ -25,7 +25,6 @@
         <item>C-HR</item>
     </string-array>
 
-    <string name="sub">Sub Activity</string>
-    <string name="os_name">OS name"</string>
-    <string name="from_main">"Nickname"</string>
+    <string name="sub">Goal Settings</string>
+    <string name="from_main">Your Car\'s CO2 consumption</string>
 </resources>
