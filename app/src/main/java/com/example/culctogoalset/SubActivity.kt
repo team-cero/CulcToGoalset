@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.app.Activity
 import android.content.Intent
+import android.widget.SeekBar
+import java.util.*
 import kotlinx.android.synthetic.main.activity_sub.*
 
 class SubActivity : AppCompatActivity(){
@@ -17,6 +19,33 @@ class SubActivity : AppCompatActivity(){
         val distance = intent.extras?.getString(MainActivity.EXTRA_DISTANCE)?:""
 
         textView.text = distance
+
+
+        //seekbar for goal setting
+        // seekbar max
+        seekbar.setProgress(0)
+        // seekbar min
+        seekbar.setMax(100)
+
+        seekbar.setOnSeekBarChangeListener(
+            object : SeekBar.OnSeekBarChangeListener {
+                //called by a knob
+                override fun onProgressChanged(
+                    seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                    // percentage format
+                    val str = String.format(Locale.US, "%d %%", progress)
+                    goalNum.text = str
+                }
+
+                override fun onStartTrackingTouch(seekBar: SeekBar) {
+                    // called when a knob is touched
+                }
+
+                override fun onStopTrackingTouch(seekBar: SeekBar) {
+                    // called when a knob is released
+                }
+
+            })
 
         button.setOnClickListener{
             val intentSub = Intent()
