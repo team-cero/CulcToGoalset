@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         //move to the sub page once the culc button was tapped
         button.setOnClickListener{
-            if (distance.text != null){
+            if (distance.text != null && !distance.text.toString().isEmpty()){
                 val intent = Intent(applicationContext, SubActivity::class.java)
                 val str = distance.text.toString()
                 val brand_result = selectedBrand
@@ -102,6 +102,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 intent.putExtra(EXTRA_DISTANCE, str)
                 startActivityForResult(intent, RESULT_SUBACTIVITY)
                 distance.setText("")
+            }
+
+            else{
+                Toast.makeText(applicationContext, "Enter the distance form", Toast.LENGTH_SHORT).show()
             }
         }
     }
