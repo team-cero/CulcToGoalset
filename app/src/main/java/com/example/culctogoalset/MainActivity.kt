@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             parent: AdapterView<*>, view: View, position: Int,
             id: Long
     ) {
-            if(spinner1?.getSelectedItem() == "Alfa Romeo") {
+            if(spinner1?.getSelectedItem() == "Hyundai") {
                 Toast.makeText(
                     applicationContext, "Mobil dipilih",
                     Toast.LENGTH_SHORT
@@ -138,22 +138,41 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
                 val adapter2 = ArrayAdapter.createFromResource(
                     this,
-                    R.array.AlfaRomeo_array, android.R.layout.simple_spinner_item
+                    R.array.Hyundai_array, android.R.layout.simple_spinner_item
                 )
                 spinner2?.setAdapter(adapter2)
-            } else if (spinner1?.getSelectedItem() == "BMW") {
+            } else if (spinner1?.getSelectedItem() == "Opel") {
                 val adapter2 = ArrayAdapter.createFromResource(
                     this,
-                    R.array.BMW_array, android.R.layout.simple_spinner_item
+                    R.array.Opel_array, android.R.layout.simple_spinner_item
+                )
+                spinner2?.setAdapter(adapter2)
+            } else if (spinner1?.getSelectedItem() == "Renault"){
+                val adapter2 = ArrayAdapter.createFromResource(
+                    this,
+                    R.array.Renault_array, android.R.layout.simple_spinner_item
+                )
+                spinner2?.setAdapter(adapter2)
+            }else if (spinner1?.getSelectedItem() == "SEAT"){
+                val adapter2 = ArrayAdapter.createFromResource(
+                    this,
+                    R.array.SEAT_array, android.R.layout.simple_spinner_item
                 )
                 spinner2?.setAdapter(adapter2)
             } else {
                 val adapter2 = ArrayAdapter.createFromResource(
                     this,
-                    R.array.TOYOTA_array, android.R.layout.simple_spinner_item
+                    R.array.SKODA_array, android.R.layout.simple_spinner_item
                 )
                 spinner2?.setAdapter(adapter2)
             }
+
+            /* get the distance value and  culculate following selected brands and models
+
+            if(spinner2?.getSelectedItem() == "Atos 1.1 Comfort "){
+                co2result = (160 * co2result.toInt()).toString()
+            }
+             */
 
 
         }
