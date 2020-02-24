@@ -8,6 +8,7 @@
 ## FlowChart
 
 - version 1: goal setting before registration
+
 https://drive.google.com/file/d/1-4Jnna1EbRXWKzSU9l1GUMV99FiNZ15u/view
 
 - version2: goal setting after registration 
