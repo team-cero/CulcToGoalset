@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     companion object{
         const val EXTRA_BRAND = "com.example.kotlinactivitydatatrans.BRAND"
         const val EXTRA_MODEL = "com.example.kotlinactivitydatatrans.MODEL"
-        const val EXTRA_FUEL = "com.example.kotlinactivitydatatrans.FUEL"
         const val EXTRA_DISTANCE = "com.example.kotlinactivitydatatrans.DISTANCE"
     }
 
@@ -30,8 +29,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var selectedBrand: String = "Alfa Romeo"
     var spinner2: Spinner? = null
     var selectedModel: String = "147 1."
-    private val fuelItems = arrayOf("Biodiesel", "Diesel", "Petrol")
-    var selectedFuel: String = "Biodiesel"
 
     //form
     private val RESULT_SUBACTIVITY = 1000
@@ -40,19 +37,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //spinners
-        val spinner3 = findViewById<Spinner>(R.id.spinner3)
-
-        // ArrayAdapter
-        val adapter3 = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, fuelItems
-        )
-
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        //set adapters to spinners
-        spinner3.adapter = adapter3
 
         //register listeners
         //Brand
@@ -67,24 +51,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         spinner1?.setAdapter(adapter1)
         spinner1?.setOnItemSelectedListener(this)
 
-        //Fuel
-        spinner3.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            //　when the item was selected
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
-            ) {
-                val spinnerParent = parent as Spinner
-                val item = spinnerParent.selectedItem as String
-                // Kotlin Android Extensions
-                selectedFuel = item
-            }
 
-            //if the item was not selected
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                //
-            }
-        }
 
         //move to the sub page once the culc button was tapped
         button.setOnClickListener{
@@ -93,12 +60,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 val str = distance.text.toString()
                 val brand_result = selectedBrand
                 val model_result = selectedModel
-                val fuel_result = selectedFuel
                 Log.d("debug", str)
 
                 intent.putExtra(EXTRA_BRAND, brand_result)
                 intent.putExtra(EXTRA_MODEL,model_result)
-                intent.putExtra(EXTRA_FUEL, fuel_result)
                 intent.putExtra(EXTRA_DISTANCE, str)
                 startActivityForResult(intent, RESULT_SUBACTIVITY)
                 distance.setText("")

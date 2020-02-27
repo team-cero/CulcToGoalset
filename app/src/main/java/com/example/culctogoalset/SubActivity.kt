@@ -18,7 +18,7 @@ class SubActivity : AppCompatActivity(){
         val intent = getIntent()
         val distance = intent.extras?.getString(MainActivity.EXTRA_DISTANCE)?:""
 
-        textView.text = distance
+        textView.text = ((distance.toFloat() * 160) / 1000 ).toString() + "kg"
 
 
         //seekbar for goal setting
