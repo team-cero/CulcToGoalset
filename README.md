@@ -8,3 +8,6 @@
 ## FlowChart
 
 https://drive.google.com/file/d/1OMX0jmwtRaWFSlwaRY_WgMSChSLJAVRB/view?usp=sharing
+
+## Activity and Fragment on Android
+https://blog.avenuecode.com/android-basics-activities-fragments
