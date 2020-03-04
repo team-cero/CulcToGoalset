@@ -44,7 +44,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         //Model
 
         spinner1 = findViewById(R.id.spinner1) as Spinner
+        var selectedBrand: String = "null"
         spinner2 = findViewById(R.id.spinner2) as Spinner
+        var selectedModel: String = "null"
         val adapter1 = ArrayAdapter.createFromResource(
             this,
             R.array.array1, android.R.layout.simple_spinner_item
