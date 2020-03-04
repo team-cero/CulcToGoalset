@@ -26,9 +26,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     // initializations
     //spinners
     var spinner1: Spinner? = null
-    var selectedBrand: String = "Alfa Romeo"
     var spinner2: Spinner? = null
-    var selectedModel: String = "147 1."
+    var selectedBrand = null
+    var selectedModel = null
+
 
     //form
     private val RESULT_SUBACTIVITY = 1000
@@ -138,6 +139,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 co2result = (160 * co2result.toInt()).toString()
             }
              */
+
+        var selectedBrand: String = (spinner1?.getSelectedItem()).toString()
+        var selectedModel: String = (spinner2?.getSelectedItem()).toString()
 
 
         }
