@@ -2,7 +2,7 @@
 
 ### Developing Environment Info
 - Android Studio 3.5.3
-- Emulator  Pixel2 API 28
+- Emulator  Pixel2 XL API 28
 - OS 4.4 KitKat
 
 ### Formula reference
