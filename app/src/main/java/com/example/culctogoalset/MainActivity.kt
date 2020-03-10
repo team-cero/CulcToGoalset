@@ -179,5 +179,3 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
 
     }
-
-
